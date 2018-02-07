@@ -8,6 +8,7 @@ import {
   Switch,
   withRouter // a higher order component
 } from 'react-router-dom'
+import HomeView from './HomeView'
 
 const NmTab = (props) => {
   return (
@@ -39,14 +40,14 @@ class App extends Component {
       <Router>
         <div className="App">
           <ButtonGroup />
-          {/* <Switch>
+          <Switch>
             <Route path="/home" component={HomeView} />
-            <Route path="/mine" component={MineView} />
+            {/* <Route path="/mine" component={MineView} />
             <Route path="/buy" component={BuyView} />
             <Route path="/sell" component={SellView} />
             <Route path="/ledger" component={LedgerView} />
-            <Route path="/transaction/:id" component={TransactionView} />
-          </Switch> */}
+            <Route path="/transaction/:id" component={TransactionView} /> */}
+        </Switch>
         </div>
       </Router>
     );
