@@ -19,7 +19,6 @@ class MineView extends Component {
 
   render() {
 
-    console.log(this.props)
     return (
       <div className="mineView">
         <h1>Mine ShintoCoins</h1>
@@ -27,7 +26,6 @@ class MineView extends Component {
           Here you can mine ShintoCoins by being the first to solve the algorithm:{" "}
         </p>
         <p>What is the 7th Fibonacci sequence number?</p>
-        {/* <div className="md-text-field"> */}
         <div className="row">
           <div className="small-1 medium-1 large-1 xlarge-1 columns">&nbsp;</div>
           <div className="small-2 medium-2 large-2 xlarge-2 columns">
