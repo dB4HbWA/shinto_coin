@@ -6,4 +6,6 @@ const HomeView = props => (
   </div>
 )
 
+//bruce
+
 export default HomeView
