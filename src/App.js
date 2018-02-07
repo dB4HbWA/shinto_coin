@@ -10,6 +10,7 @@ import {
 } from 'react-router-dom'
 import HomeView from './HomeView'
 import MineView from './MineView'
+import BuyView from './BuyView'
 
 const NmTab = (props) => {
   return (
@@ -44,8 +45,8 @@ class App extends Component {
           <Switch>
             <Route path="/home" component={HomeView} />
             <Route path="/mine" component={MineView} />
-            {/* <Route path="/buy" component={BuyView} />
-            <Route path="/sell" component={SellView} />
+            <Route path="/buy" component={BuyView} />
+            {/* <Route path="/sell" component={SellView} />
             <Route path="/ledger" component={LedgerView} />
             <Route path="/transaction/:id" component={TransactionView} /> */}
         </Switch>
@@ -55,5 +56,4 @@ class App extends Component {
   }
 }
 export default App;
-//test
 
