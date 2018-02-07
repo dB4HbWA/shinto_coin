@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from 'react-redux';
+
 const LedgerView = props => (
   <div className="ledgerView">
     <h1>Browse the Ledger</h1>
@@ -18,24 +20,13 @@ const LedgerView = props => (
           </tr>
         </thead>
         <tbody height="500" >
+          {props.transactions.map((transaction) => (
             <tr>
-              <td>Mined</td>
-              <td>1</td>
-              <td>2</td>
+              <td>{transaction.action}</td>
+              <td>{transaction.amount}</td>
+              <td>{transaction.value}</td>
               <td>Details</td>
-            </tr>
-            <tr>
-              <td>Mined</td>
-              <td>1</td>
-              <td>2</td>
-              <td>Details</td>
-            </tr>
-            <tr>
-              <td>Mined</td>
-              <td>1</td>
-              <td>2</td>
-              <td>Details</td>
-            </tr>
+            </tr>))}
         </tbody>
       </table>
   </div>
@@ -43,4 +34,10 @@ const LedgerView = props => (
 
 );
 
-export default LedgerView;
+const mapStateToProps = (state) => {
+  return {
+    transactions: state.transactions
+  }
+}
+
+export default connect(mapStateToProps)(LedgerView)
