@@ -1,20 +1,26 @@
-import  React, { Component} from "react";
-import  {connect} from 'react-redux'; 
+import React, { Component } from "react";
+import { connect } from 'react-redux';
 
 import { MINE_SHINTO_COINS } from "./state/action";
 
 
 class MineView extends Component {
-    constructor(props){
-      super(props)
-      this.state = {
-        number: 0
-      }
+  constructor(props) {
+    super(props)
+    this.state = {
+      answer: ""
     }
+    this.changeAnswer = this.changeAnswer.bind(this)
+  }
+
+  changeAnswer(e) {
+    this.setState({answer: e.target.value})
+  }
 
   render() {
-    return
-    (
+
+    console.log(this.props)
+    return (
       <div className="mineView">
         <h1>Mine ShintoCoins</h1>
         <p>
@@ -22,38 +28,37 @@ class MineView extends Component {
         </p>
         <p>What is the 7th Fibonacci sequence number?</p>
         {/* <div className="md-text-field"> */}
-        <div class="row">
-          <div class="small-1 medium-1 large-1 xlarge-1 columns">&nbsp;</div>
-          <div class="small-2 medium-2 large-2 xlarge-2 columns">
-            <input type="text" placeholder="Number" />
+        <div className="row">
+          <div className="small-1 medium-1 large-1 xlarge-1 columns">&nbsp;</div>
+          <div className="small-2 medium-2 large-2 xlarge-2 columns">
+            <input type="text" placeholder="Answer" onChange={this.changeAnswer} />
           </div>
 
-          <div class="small-1 medium-1 large-1 xlarge-1 columns" />
-          <div class="small-2 medium-2 large-2 xlarge-2 columns">
-            <button className="button btn-cta" onClick={() => this.props.mineCoin(this.state.number)}>Mine</button>
+          <div className="small-1 medium-1 large-1 xlarge-1 columns" />
+          <div className="small-2 medium-2 large-2 xlarge-2 columns">
+            <button className="button btn-cta" onClick={() => this.props.mineCoin(this.state.answer)}>Mine</button>
           </div>
-          <div class="small-6 medium-6 large-6 xlarge-6 columns" />
+          <div className="small-6 medium-6 large-6 xlarge-6 columns" />
         </div>
       </div>
     )
   }
 }
 
-
-const mapTabDisplayStateToProps = (state) => {
+const mapStateToProps = (state) => {
   return {
-    tabs: state.tabs,
-    selectedTab: state.selectedTab
+    value: state.value
   }
 }
 
-const mapTabDisplayDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    mineCoin(num) {
-      dispatch({ type: MINE_SHINTO_COINS, payload: num })
+    mineCoin(answer) {
+      if (answer == 8)
+        dispatch({ type: MINE_SHINTO_COINS })
     }
   }
 }
 
 
-export default connect(mapTabDisplayStateToProps, mapTabDisplayDispatchToProps)(MineView)
+export default connect(mapStateToProps, mapDispatchToProps)(MineView)
