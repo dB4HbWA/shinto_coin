@@ -1,6 +1,6 @@
 import React from "react";
 const SellView = props => (
-  <div className="SellView">
+  <div className="sellView">
     <h1>Sell ShintoCoins</h1>
     <div>
       Current ShintoCoin Value:

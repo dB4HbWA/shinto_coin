@@ -12,6 +12,7 @@ import HomeView from './HomeView'
 import MineView from './MineView'
 import BuyView from './BuyView'
 import SellView from './SellView'
+import LedgerView from './LedgerView'
 
 const NmTab = (props) => {
   return (
@@ -48,8 +49,8 @@ class App extends Component {
             <Route path="/mine" component={MineView} />
             <Route path="/buy" component={BuyView} />
             <Route path="/sell" component={SellView} />
-            {/* <Route path="/ledger" component={LedgerView} />
-            <Route path="/transaction/:id" component={TransactionView} /> */}
+            <Route path="/ledger" component={LedgerView} />
+            {/* <Route path="/transaction/:id" component={TransactionView} /> */}
         </Switch>
         </div>
       </Router>
