@@ -9,6 +9,7 @@ import {
   withRouter // a higher order component
 } from 'react-router-dom'
 import HomeView from './HomeView'
+import MineView from './MineView'
 
 const NmTab = (props) => {
   return (
@@ -42,8 +43,8 @@ class App extends Component {
           <ButtonGroup />
           <Switch>
             <Route path="/home" component={HomeView} />
-            {/* <Route path="/mine" component={MineView} />
-            <Route path="/buy" component={BuyView} />
+            <Route path="/mine" component={MineView} />
+            {/* <Route path="/buy" component={BuyView} />
             <Route path="/sell" component={SellView} />
             <Route path="/ledger" component={LedgerView} />
             <Route path="/transaction/:id" component={TransactionView} /> */}
