@@ -25,17 +25,17 @@ class BuyView extends Component {
         <div>
           Number of ShintoCoins Owned: {this.props.value - 1}
     </div>
-        <div class="row">
-          <div class="small-1 medium-1 large-1 xlarge-1 columns">&nbsp;</div>
-          <div class="small-2 medium-2 large-2 xlarge-2 columns">
+        <div className="row">
+          <div className="small-1 medium-1 large-1 xlarge-1 columns">&nbsp;</div>
+          <div className="small-2 medium-2 large-2 xlarge-2 columns">
             <input type="text" placeholder="Number" onChange={this.changeNumber} />
           </div>
 
-          <div class="small-1 medium-1 large-1 xlarge-1 columns" />
-          <div class="small-2 medium-2 large-2 xlarge-2 columns">
+          <div className="small-1 medium-1 large-1 xlarge-1 columns" />
+          <div className="small-2 medium-2 large-2 xlarge-2 columns">
             <button className="button btn-cta" onClick={() => this.props.buyCoins(this.state.number)} >Buy</button>
           </div>
-          <div class="small-6 medium-6 large-6 xlarge-6 columns" />
+          <div className="small-6 medium-6 large-6 xlarge-6 columns" />
         </div>
       </div>
     );

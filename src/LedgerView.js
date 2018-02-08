@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const LedgerView = props => (
   <div className="ledgerView">
@@ -21,11 +22,12 @@ const LedgerView = props => (
         </thead>
         <tbody height="500" >
           {props.transactions.map((transaction) => (
-            <tr>
+            <tr key={transaction.id}>
               <td>{transaction.action}</td>
               <td>{transaction.amount}</td>
               <td>{transaction.value}</td>
-              <td>Details</td>
+              {/* make the details a routed link */}
+              <td><Link to={'/transaction/'+transaction.id}>Details</Link></td>
             </tr>))}
         </tbody>
       </table>
